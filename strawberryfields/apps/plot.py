@@ -100,7 +100,16 @@ graph_node_size = 14
 subgraph_node_size = 16
 
 
-def graph(g: nx.Graph, s: Optional[list] = None, plot_size: Tuple = (500, 500)):  # pragma: no cover
+def graph(g: nx.Graph,
+          s: Optional[list] = None,
+          plot_size: Tuple = (500, 500),
+          graph_node_colour = "#3e9651",
+          graph_edge_colour = "#CDCDCD",
+          subgraph_node_colour = "#cc2529",
+          subgraph_edge_colour = "#cc2529",
+          graph_node_size = 14,
+          subgraph_node_size = 16,
+          background_color="#ffffff"):  # pragma: no cover
     """Creates a plot of the input graph.
 
     This function can plot the input graph only, or the graph with a specified subgraph highlighted.
@@ -157,7 +166,7 @@ def graph(g: nx.Graph, s: Optional[list] = None, plot_size: Tuple = (500, 500)):
         margin=dict(b=0, l=0, r=0, t=25),
         height=plot_size[1],
         width=plot_size[0],
-        plot_bgcolor="#ffffff",
+        plot_bgcolor=background_color,
     )
 
     if s is not None:
